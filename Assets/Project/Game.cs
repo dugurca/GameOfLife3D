@@ -9,6 +9,7 @@ namespace Assets
         private readonly List<List<List<GameObject>>> _goList = new List<List<List<GameObject>>>();
         private GameOfLife _gol;
         private float _time;
+
         void Awake()
         {
             _time = Time.time;
@@ -19,6 +20,11 @@ namespace Assets
 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                _time = Time.time;
+                _gol = new GameOfLife(N);
+            }
             if (_time + 0.25f < Time.time)
             {
                 _gol.Next();

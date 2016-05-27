@@ -21,8 +21,7 @@ namespace Assets
                     Grid[i].Add(new List<int>(N));
                     for (int k = 0; k < N; k++)
                     {
-                        if (r.Next() % 100 == 0) Grid[i][j].Add(1);
-                        else Grid[i][j].Add(0);
+                        Grid[i][j].Add(r.Next()%25 == 0 ? 1 : 0);
                     }
                 }
             }
