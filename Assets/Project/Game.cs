@@ -19,7 +19,7 @@ namespace Assets
 
         void Update()
         {
-            if (_time + 1 < Time.time)
+            if (_time + 0.25f < Time.time)
             {
                 _gol.Next();
                 Draw();

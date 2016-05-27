@@ -38,7 +38,7 @@ namespace Assets
                 {
                     for (int kk = k - 1; kk <= k + 1; kk++)
                     {
-                        if (InBounds(ii, jj, kk) && (Grid[ii][jj][kk] & 1) == 1)
+                        if (InBounds(ii, jj, kk) && Grid[ii][jj][kk] == 1)
                             numNeighbors++;
                     }
                 }
@@ -65,13 +65,12 @@ namespace Assets
                         int numNeighbors = GetNumNeighbors(i, j, k);
                         if (Grid[i][j][k] == 1)
                         {
-                            if (numNeighbors >= 3 && numNeighbors <= 6)
+                            if (numNeighbors >= 3 && numNeighbors <= 5)
                                 Grid[i][j][k] = 3;
                         }
                         else
                         {
-                            if (numNeighbors >= 3 && numNeighbors <= 5)
-                                Grid[i][j][k] = 2;
+                            if (numNeighbors == 4) Grid[i][j][k] = 2;
                         }
                     }
                 }
